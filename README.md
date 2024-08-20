@@ -1,6 +1,65 @@
 # Django-RESTAPI-restaurant-project
+<h1>Overview</h1>
 
-API Final Project
+This project is a Django-based RESTful API for an e-commerce platform, providing functionalities for menu management, cart operations, and order processing. The API supports role-based access control and dynamic views for efficient data handling.
+
+<h2>Features</h2>
+
+Menu Management: CRUD operations for menu items and categories.
+Cart Operations: Add, remove, and list items in the cart.
+Order Processing: Place, update, and retrieve orders.
+Role-Based Access Control: Custom permissions for Managers and Delivery Crew.
+Pagination and Search: Efficient data retrieval with search and pagination.
+
+<h2>Technologies</h2>
+
+Django: Web framework
+Django REST Framework: API framework
+Djoser: Authentication and user management
+SQLite: Database (default; can be configured for other databases)
+Pipenv: Dependency management
+
+<h2>Installation</h2>
+
+<h5>Clone the repository:</h5>
+git clone https://github.com/yourusername/LittleLemon.git
+cd LittleLemon
+<h5>Set up the environment:</h5>
+pipenv install
+<h5>Run the server:</h5>
+pipenv run python manage.py migrate
+pipenv run python manage.py runserver
+
+<h2>Configuration</h2>
+
+Database: The default setup uses SQLite. To use a different database, update the DATABASES setting in settings.py.
+Authentication: Configure Djoser in settings.py for token-based authentication.
+
+<h2>Usage</h2>
+
+<h4>API Endpoints:</h4>
+/api/menu-items/: List and create menu items.
+/api/menu-items/<id>/: Retrieve, update, or delete a specific menu item.
+/api/cart/menu-items/: Manage cart items.
+/api/orders/: List and create orders.
+/api/orders/<id>/: Retrieve, update, or delete a specific order.
+    
+<h4>Authentication:</h4>
+Use Djoser endpoints for user registration and login.
+Authentication tokens should be included in request headers.
+
+<h2>Testing</h2>
+
+<b>Run tests using the Django test framework:</b>
+pipenv run python manage.py test
+
+<h2>Contributing</h2>
+
+Feel free to fork the repository and submit pull requests. For any issues or feature requests, open an issue in the GitHub repository.
+
+<h2>License</h2>
+
+This project is licensed under the MIT License. See the LICENSE file for details.
 
 
 Name for Super Admin:
@@ -42,28 +101,5 @@ Users:
         password: littlelily@123
         email: lily@littlelemon.com 
 
-E-Commerce REST API Project
-
-<h2>Project Overview:</h2>
-Developed a comprehensive e-commerce REST API using Django and Django REST Framework (DRF) to manage a restaurant's menu, cart, orders, and user management.
-Key Features:
-<h5>User Authentication:</h5> Integrated user authentication with Django REST Framework and Djoser, supporting registration, login, and token-based authentication.
-<h5>User Roles and Permissions:</h5> Implemented custom permissions for different user roles including Managers, Delivery Crew, and regular users, allowing role-based access control to API endpoints.
-<h5>CRUD Operations:</h5>
-Menu Management: CRUD operations for menu items and categories with serializers and views to manage and query products.
-Cart Management: Functionality for adding, updating, and removing items from the cart. Ensured that cart operations are user-specific.
-Order Management: Users can place orders, view their orders, and update or delete them. Managers and Delivery Crew have extended permissions to manage all orders.
-Group Management: Endpoints to manage user groups (Managers and Delivery Crew), including adding and removing users from these groups.
-API Security: Implemented rate limiting and throttling to protect against abuse, and configured permissions to ensure data security and access control.
-<h5>Technologies Used:</h5>
-Backend: Django 5.0.7, Django REST Framework, Djoser
-Database: SQLite (for development; easily configurable for MySQL in production)
-Authentication: Token-based authentication with DRF, user management with Django's built-in User model and Groups.
-<h5>Development Practices:</h5>
-Version Control: Used Git for version control and collaboration.
-Documentation: Provided clear API documentation and endpoints for ease of use and integration.
-Testing: Implemented unit tests for API endpoints and functionality to ensure robustness.
-Deployment:
-Configured settings for deployment and ensured the project adheres to Django’s deployment checklist for a production environment.
 
 
